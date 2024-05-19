@@ -1,0 +1,52 @@
+<%= form_with(model: hotel) do |form| %>
+  <% if hotel.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+
+      <ul>
+        <% hotel.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :owner_name, style: "display: block" %>
+    <%= form.text_field :owner_name %>
+  </div>
+
+  <div>
+    <%= form.label :mobile_number, style: "display: block" %>
+    <%= form.number_field :mobile_number %>
+  </div>
+
+  <div>
+    <%= form.label :gst, style: "display: block" %>
+    <%= form.text_field :gst %>
+  </div>
+
+  <div>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :city, style: "display: block" %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

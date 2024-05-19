@@ -5,7 +5,4 @@ import "jquery"
 import "jquery_ujs"
 import "popper"
 import "bootstrap"
-
-$(document).on('turbolinks:load', function(){
-  alert('hello');
-});
+import './custom';
