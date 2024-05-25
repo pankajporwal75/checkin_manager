@@ -1,4 +1,4 @@
-class CreateRecord
+class UpdateRecord
 
   def self.call(record, params)
     new(record, params).process
