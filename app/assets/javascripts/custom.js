@@ -6,12 +6,12 @@ function get_today_sales() {
   });
 }
 
-// Call the function to test it
-$(document).on('turbo:load', function(){
-  get_today_sales();
+$(document).on('click', '#modal-submit', function () {
+  debugger;
+  $('.submit-form').trigger('click');
 });
 
-$('#modal-submit').on('click', function () {
-  $('.submit-form').trigger('click.rails');
+$(document).on('turbolinks:load', function(){
+  get_today_sales();
 });
 

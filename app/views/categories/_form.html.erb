@@ -1,4 +1,3 @@
-<!-- _form.html.erb -->
 <%= form_for(@category, remote: true, html: { class: "needs-validation" }) do |f| %>
   <% if @category.errors.any? %>
     <div class="alert alert-danger">

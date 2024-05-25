@@ -17,8 +17,8 @@ class UpdateRecord
         { success: true }
       else
         { success: false, object: record, errors: record.errors.full_messages }
-        raise ActiveRecord::Rollback
       end
+      raise ActiveRecord::Rollback if !result[:success]
     end
     result
   end

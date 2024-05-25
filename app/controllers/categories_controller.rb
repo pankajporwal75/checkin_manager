@@ -30,13 +30,14 @@ class CategoriesController < ApplicationController
     if result[:success]
       redirect_to categories_path, notice: 'Category Successfully Updated'
     else
+      binding.pry 
       @category = result[:object]
     end
   end
 
   def destroy
     @category.destroy!
-    redirect_to categories_url, notice: "Category was successfully destroyed."
+    redirect_to categories_url, alert: "Category was successfully destroyed."
   end
 
   private
