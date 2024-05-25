@@ -10,3 +10,8 @@ function get_today_sales() {
 $(document).on('turbo:load', function(){
   get_today_sales();
 });
+
+$('#modal-submit').on('click', function () {
+  $('.submit-form').trigger('click.rails');
+});
+

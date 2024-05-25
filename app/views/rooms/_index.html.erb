@@ -1,0 +1,29 @@
+<div class="d-flex">
+  <div class="float-left">
+    <h1>Rooms</h1>
+  </div>
+  <div class="float-right">
+    <%= link_to "New Room", new_room_path, class: "btn btn-primary float-right", remote: true %>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Number</th>
+      <th scope="col">Category</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <div id="categories">
+      <% @rooms.each do |room| %>
+        <tr>
+          <td><%= room.number %></td>
+          <td><%= room.category.name %></td>
+          <td><%= link_to "Delete", room_path(room), data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-outline-danger btn-sm' %></td>
+        </tr>
+      <% end %>
+    </div>
+  </tbody>
+</table>

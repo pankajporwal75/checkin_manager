@@ -1,0 +1,22 @@
+<!-- _form.html.erb -->
+<%= form_for(@category, remote: true, html: { class: "needs-validation" }) do |f| %>
+  <% if @category.errors.any? %>
+    <div class="alert alert-danger">
+      <h6>Please fix these errors:</h6>
+      <ul>
+        <% @category.errors.full_messages.each do |message| %>
+          <li><p><%= message %></p></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= f.label :name, class: "form-label" %>
+    <%= f.text_field :name, class: "form-control", autofocus: true %>
+  </div>
+
+  <div class="modal-footer">
+    <%= f.submit nil, class: "submit-form d-none" %>
+  </div>
+<% end %>

@@ -12,7 +12,10 @@
   <body>
   <div class="container">
     <%= render 'shared/navbar' if hotel_signed_in? %>
-    <%= yield %>
+    <%= render 'shared/flash' %>
+    <div class="content-container container">
+      <%= yield %>
+    </div>
   </div>
   <%= render 'shared/modal' %>
   </body>
