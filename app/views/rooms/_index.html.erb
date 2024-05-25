@@ -1,4 +1,4 @@
-<div class="d-flex">
+<div class="d-flex justify-content-between ms-0 m-4">
   <div class="float-left">
     <h1>Rooms</h1>
   </div>
@@ -7,10 +7,10 @@
   </div>
 </div>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Number</th>
+      <th scope="col" >Number</th>
       <th scope="col">Category</th>
       <th scope="col">Actions</th>
     </tr>
@@ -21,7 +21,11 @@
         <tr>
           <td><%= room.number %></td>
           <td><%= room.category.name %></td>
-          <td><%= link_to "Delete", room_path(room), data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-outline-danger btn-sm' %></td>
+          <td>
+            <%= link_to "Show", room_path(room), class: 'badge btn btn-primary btn-sm', remote: true %>
+            <%= link_to "Edit", edit_room_path(room), class: 'badge btn btn-dark btn-sm', remote: true %>
+            <%= link_to "Delete", room_path(room), data: {confirm: 'Are you sure?'}, method: :delete, class: 'badge btn btn-danger btn-sm' %>
+          </td>
         </tr>
       <% end %>
     </div>
