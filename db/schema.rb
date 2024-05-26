@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_25_103133) do
 
   create_table "rooms", force: :cascade do |t|
     t.integer "number"
+    t.string "status"
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
