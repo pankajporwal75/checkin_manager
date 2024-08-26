@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  resources :customers
+  resources :rooms
+  resources :categories
   devise_for :hotels
   resources :hotels
+  resources :bookings
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -16,6 +20,7 @@ Rails.application.routes.draw do
       get :last_week_sales
       get :current_month_sales
       get :last_month_sales
+      get :room_status
     end
   end
 end

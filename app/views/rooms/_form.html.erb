@@ -1,0 +1,27 @@
+<!-- _form.html.erb -->
+<%= form_for(@room, remote: true, html: { class: "needs-validation" }) do |f| %>
+  <% if @room.errors.any? %>
+    <div class="alert alert-danger">
+      <h6>Please fix these errors:</h6>
+      <ul>
+        <% @room.errors.full_messages.each do |message| %>
+          <li><p><%= message %></p></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= f.label :number, class: "form-label" %>
+    <%= f.number_field :number, class: "form-control", autofocus: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :category, class: "form-label" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, { prompt: "Select a category" }, { class: "form-control" }) %>
+  </div>
+
+  <div class="modal-footer">
+    <%= f.submit nil, class: "submit-form d-none" %>
+  </div>
+<% end %>
