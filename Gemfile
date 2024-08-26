@@ -31,6 +31,13 @@ gem "sassc-rails"
 
 gem 'jquery-rails'
 
+gem 'sweetalert-rails'
+
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
+gem "font-awesome-sass"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

@@ -6,6 +6,9 @@
 //= require popper
 //= require bootstrap
 //= require toastr.min.js
+//= require sweetalert
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree ./
 
 
