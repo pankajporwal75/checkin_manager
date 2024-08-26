@@ -1,0 +1,6 @@
+<% if @room.errors.any? %>
+  $('.modal-body').html('<%= escape_javascript(render "form") %>');
+<% else %>
+  window.location.reload();
+<% end %>
+

@@ -25,8 +25,6 @@ class RoomsController < ApplicationController
     @room.status = 'Available'
     if @room.save
       redirect_to rooms_path, notice: "Room Created Successfully."
-    else
-
     end
   end
 
