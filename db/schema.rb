@@ -11,12 +11,15 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_06_22_182526) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bookings", force: :cascade do |t|
     t.string "in_date"
     t.string "in_time"
     t.string "out_date"
     t.string "out_time"
-    t.integer "customer_id", null: false
+    t.bigint "customer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_bookings_on_customer_id"
@@ -59,8 +62,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_22_182526) do
   end
 
   create_table "room_bookings", force: :cascade do |t|
-    t.integer "room_id", null: false
-    t.integer "booking_id", null: false
+    t.bigint "room_id", null: false
+    t.bigint "booking_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_room_bookings_on_booking_id"
@@ -70,18 +73,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_22_182526) do
   create_table "rooms", force: :cascade do |t|
     t.integer "number"
     t.string "status"
-    t.integer "category_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_rooms_on_category_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "hotel_name"
-    t.integer "mobile_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "bookings", "customers"
